@@ -1,0 +1,38 @@
+{
+  "name": "adventofcode2020",
+  "version": "1.0.0",
+  "description": "Advent of code 2020",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "author": "Nerwin",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "lint-staged": "^10.5.2",
+    "xo": "^0.35.0"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "xo": {
+    "prettier": true
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "prettier": {
+    "printWidth": 140,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
+}
