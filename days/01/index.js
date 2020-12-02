@@ -10,7 +10,7 @@ const day01 = () => {
   const subset = subSetSum(input, 2020, entriesCount);
   const result = subset.reduce((a, b) => a * b);
 
-  console.log(`Result: ${result}`);
+  return result;
 };
 
 function subSetSum(input, target, entriesCount, subset = []) {
@@ -19,7 +19,7 @@ function subSetSum(input, target, entriesCount, subset = []) {
   if (sum > target || subset.length > entriesCount) return null;
 
   if (sum === target && subset.length == entriesCount) {
-    console.log(`${subset.join(' + ')} = ${target}`);
+    // console.log(`${subset.join(' + ')} = ${target}`);
     return subset;
   }
 
