@@ -28,6 +28,4 @@ const day03 = () => {
   return result;
 };
 
-day03();
-
 export default day03;
