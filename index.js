@@ -8,7 +8,7 @@ Object.values(days).forEach((dayExec) => {
   console.time('ComputeTime');
 
   const result = dayExec();
-  console.log(`Result: ${result}`);
+  console.log('Result:', result);
 
   console.log('');
   console.timeEnd('ComputeTime');
