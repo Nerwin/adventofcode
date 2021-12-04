@@ -1,14 +1,23 @@
-import * as days from './days/index';
+const inquirer = require('inquirer');
 
-console.log('=== Advent of Code 2020 ===');
+(async () => {
+  console.log('=== Advent of Code ===\n');
 
-Object.values(days).forEach((dayExec) => {
-  console.log('---------------------------');
-  console.log(`## ${dayExec.name}\n`);
-  console.time('ComputeTime');
+  const { year } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'year',
+      message: 'Which year do you want to run ?',
+      choices: ['2020', '2021'],
+    },
+  ]);
 
-  const result = dayExec();
-  console.log('Result:', result, '\n');
-
-  console.timeEnd('ComputeTime');
-});
+  switch (year) {
+    case '2020':
+      require('./2020');
+      break;
+    case '2021':
+      require('./2021');
+      break;
+  }
+})();

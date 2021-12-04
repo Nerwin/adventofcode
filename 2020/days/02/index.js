@@ -1,4 +1,4 @@
-import input from './input.json';
+const input = require('./input.json');
 
 /**
  * @link https://adventofcode.com/2020/day/2
@@ -7,7 +7,7 @@ import input from './input.json';
 
 const regex = /(\d+-\d+).([a-z]{1}):\s(\w+)/; // 3 capturing groups: 1=policy, 2=letter, 3=password
 
-const day02 = () => {
+module.exports = () => {
   const result = input.filter((line) => {
     const [_str, policy, letter, password] = line.match(regex);
 
@@ -20,5 +20,3 @@ const day02 = () => {
 
   return result;
 };
-
-export default day02;

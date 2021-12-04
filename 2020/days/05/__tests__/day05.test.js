@@ -1,4 +1,4 @@
-import { default as day05 } from '../index';
+const day05 = require('../index');
 
 describe('Day 05', () => {
   it(`Should return 906 as max and 519 for mine`, () => expect(day05()).toMatchObject({ min: 55, max: 906, total: 851, mine: 519 }));

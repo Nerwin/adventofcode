@@ -1,4 +1,4 @@
-import input from './input.json';
+const input = require('./input.json');
 
 /**
  * @link https://adventofcode.com/2020/day/3
@@ -13,7 +13,7 @@ const slopesSpeed = [
   { x: 1, y: 2 },
 ];
 
-const day03 = () => {
+module.exports = () => {
   const result = slopesSpeed.reduce((accumulator, slopeSpeed) => {
     const totalTrees = input.filter((line, index) => {
       if (index % slopeSpeed.y !== 0) return false;
@@ -27,5 +27,3 @@ const day03 = () => {
 
   return result;
 };
-
-export default day03;

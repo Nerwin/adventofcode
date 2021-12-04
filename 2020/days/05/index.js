@@ -1,4 +1,4 @@
-import input from './input.json';
+const input = require('./input.json');
 
 /**
  * @link https://adventofcode.com/2020/day/5
@@ -31,7 +31,7 @@ const findMissingSeat = (seatList) => {
     );
 };
 
-const day05 = (partitions = input) => {
+module.exports = (partitions = input) => {
   const seatList = partitions.map((partition) => {
     const [_match, rowPartition, columnPartition] = partition.match(/(^[BF]{7})([LR]{3}$)/);
 
@@ -46,5 +46,3 @@ const day05 = (partitions = input) => {
 
   return { min: Math.min(...seatList), max: Math.max(...seatList), total: seatList.length, mine: findMissingSeat(seatList) };
 };
-
-export default day05;

@@ -1,12 +1,12 @@
-import path from 'path';
-import fs from 'fs';
+const path = require('path');
+const fs = require('fs');
 
 /**
  * @link https://adventofcode.com/2020/day/6
  * @description For each group, count the number of questions to which everyone answered "yes". What is the sum of those counts?
  */
 
-const day06 = () => {
+module.exports = () => {
   const answers = fs.readFileSync(path.resolve(__dirname, 'input.txt'), 'utf-8').toString().split(/\n\s+/);
 
   const result = answers.reduce((acc, answer) => {
@@ -23,5 +23,3 @@ const day06 = () => {
 
   return result;
 };
-
-export default day06;

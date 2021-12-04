@@ -1,5 +1,5 @@
-import path from 'path';
-import fs from 'fs';
+const path = require('path');
+const fs = require('fs');
 
 /**
  * @link https://adventofcode.com/2020/day/4
@@ -23,7 +23,7 @@ const fieldValidator = {
   },
 };
 
-const day04 = () => {
+module.exports = () => {
   const passports = fs.readFileSync(path.resolve(__dirname, 'input.txt')).toString().split(/\n\s+/);
 
   const result = passports.filter((passport) => {
@@ -35,5 +35,3 @@ const day04 = () => {
 
   return result;
 };
-
-export default day04;
