@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 
 (async () => {
   console.log('=== Advent of Code ===\n');
-
   const { year } = await inquirer.prompt([
     {
       type: 'list',
@@ -19,5 +18,7 @@ const inquirer = require('inquirer');
     case '2021':
       require('./2021');
       break;
+    default:
+      console.error('Invalid answer');
   }
 })();

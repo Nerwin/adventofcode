@@ -16,10 +16,11 @@ module.exports = () => {
 function subSetSum(input, target, entriesCount, subset = []) {
   const sum = subset.reduce((a, b) => a + b, 0);
 
-  if (sum > target || subset.length > entriesCount) return null;
+  if (sum > target || subset.length > entriesCount) {
+    return null;
+  }
 
-  if (sum === target && subset.length == entriesCount) {
-    // console.log(`${subset.join(' + ')} = ${target}`);
+  if (sum === target && subset.length === entriesCount) {
     return subset;
   }
 
@@ -27,6 +28,8 @@ function subSetSum(input, target, entriesCount, subset = []) {
     const value = input[index];
     const remaining = input.slice(index + 1);
     const result = subSetSum(remaining, target, entriesCount, subset.concat([value]));
-    if (result) return result;
+    if (result) {
+      return result;
+    }
   }
 }

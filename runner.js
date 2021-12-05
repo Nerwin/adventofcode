@@ -1,11 +1,12 @@
+const { hrtime } = require('process');
 const { table } = require('table');
 
 module.exports = function (year, days) {
   const results = Object.keys(days).reduce((acc, currentDay) => {
-    const start = process.hrtime();
+    const start = hrtime();
     const result = days[currentDay]();
-    const end = process.hrtime(start);
-    acc.push([currentDay.replace('day', ''), JSON.stringify(result), `${(end[1] / 1000000).toFixed(2)}ms`]);
+    const end = hrtime(start);
+    acc.push([currentDay.replace('day', ''), JSON.stringify(result), `${(end[1] / 1_000_000).toFixed(2)}ms`]);
     return acc;
   }, []);
 

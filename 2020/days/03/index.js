@@ -16,10 +16,13 @@ const slopesSpeed = [
 module.exports = () => {
   const result = slopesSpeed.reduce((accumulator, slopeSpeed) => {
     const totalTrees = input.filter((line, index) => {
-      if (index % slopeSpeed.y !== 0) return false;
+      if (index % slopeSpeed.y !== 0) {
+        return false;
+      }
+
       const currentXPosition = (index * slopeSpeed.x) / slopeSpeed.y;
 
-      return line.charAt(currentXPosition % line.length) === '#' ? true : false;
+      return line.charAt(currentXPosition % line.length) === '#';
     }).length;
 
     return accumulator * totalTrees;

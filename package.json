@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
+    "lint": "xo --fix",
     "test": "jest --verbose"
   },
   "author": "Nerwin",
@@ -28,11 +29,25 @@
     ]
   },
   "xo": {
-    "prettier": true
-  },
-  "prettier": {
-    "printWidth": 140,
-    "singleQuote": true,
-    "trailingComma": "all"
+    "ignores": [
+      "__tests__"
+    ],
+    "rules": {
+      "import/extensions": "off",
+      "import/no-unassigned-import": "off",
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "^_"
+        }
+      ],
+      "unicorn/no-array-reduce": "off",
+      "unicorn/prefer-module": "off"
+    },
+    "space": true
   }
 }

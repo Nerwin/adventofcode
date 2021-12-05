@@ -11,12 +11,12 @@ module.exports = () => {
 
   const result = answers.reduce((acc, answer) => {
     const answerArray = answer.split('\n');
-    if (answerArray.length === 1) return acc + answerArray[0].length;
+    if (answerArray.length === 1) {
+      return acc + answerArray[0].length;
+    }
 
     const shortestAnswer = answerArray.sort((a, b) => a.length - b.length).shift();
-    const answeredByEveryone = shortestAnswer.split('').filter((letter) => {
-      return answerArray.every((v) => v.includes(letter));
-    });
+    const answeredByEveryone = shortestAnswer.split('').filter(letter => answerArray.every(v => v.includes(letter)));
 
     return acc + answeredByEveryone.length;
   }, 0);
